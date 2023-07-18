@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Technique Trainer</title>
+    <style>
+        body {
+            background-color: #333;
+            color: white;
+            font-family: 'Roboto', sans-serif;
+            padding: 0 10px;
+        }
+        h1, p {
+            color: white;
+        }
+        input[type="number"], button, select {
+            margin: 10px 0;
+            font-size: 1em;
+        }
+        #description {
+            margin-top: 20px;
+        }
+        progress[value] {
+            width: 100%;
+            height: 20px;
+            background-color: #333;
+        }
+        progress[value]::-webkit-progress-bar {
+            background-color: #333;
+        }
+        progress[value]::-webkit-progress-value {
+            background-color: white;
+        }
+        progress[value]::-moz-progress-bar {
+            background-color: white;
+        }
+        @media only screen and (max-width: 600px) {
+            body {
+                font-size: 18px;
+            }
+        }
+    </style>
+    <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
+</head>
+<body>
+    <label for="min">Minimum Number of Techniques:</label>
+    <input type="number" id="min" name="min" min="1" max="6">
+    <br>
+    <label for="max">Maximum Number of Techniques:</label>
+    <input type="number" id="max" name="max" min="1" max="6">
+    <br>
+    <label for="speed">Speed in Seconds:</label>
+    <input type="number" id="speed" name="speed" min="1">
+    <br>
+    <label for="techniques">Choose Techniques:</label>
+    <select id="techniques" name="techniques" multiple size="6">
+        <option value="0" selected>Cross</option>
+        <option value="1" selected>Flank</option>
+        <option value="2" selected>Front Kick</option>
+        <option value="3" selected>Jab</option>
+        <option value="4" selected>Jab Cross</option>
+        <option value="5" selected>Switch</option>
+    </select>
+    <br>
+    <button id="play" onclick="play()">Play</button>
+    <button id="stop" onclick="stop()">Stop</button>
+
+    <progress id="progress" value="0" max="1"></progress>
+    <div id="description"></div>
+
+    <script type="text/javascript">
+        const techniques = [
+            { audioSource: 'audio/cross.mp3', description: '<h1>Cross</h1>' },
+            { audioSource: 'audio/flank.mp3', description: '<h1>Flank</h1><p>Front Foot Across - 90deg Turn to Side</p>' },
+            { audioSource: 'audio/frontkick.mp3', description: '<h1>Front Kick</h1>' },
+            { audioSource: 'audio/jab.mp3', description: '<h1>Jab</h1>' },
+            { audioSource: 'audio/jabcross.mp3', description: '<h1>Jab Cross</h1>' },
+            { audioSource: 'audio/switch.mp3', description: '<h1>Switch</h1>' }
+        ];
+
+        let currentAudio = null;
+        let interval = null;
+        let selectedTechniques = [];
+        
+        function getSelectedOptions() {
+            const select = document.getElementById('techniques');
+            const selected = Array.from(select.selectedOptions).map(option => parseInt(option.value));
+            return selected.map(index => techniques[index]);
+        }
+
+        function getRandomTechniques(min, max) {
+            const availableTechniques = getSelectedOptions();
+            let num = Math.floor(Math.random() * (max - min + 1)) + min;
+            let copy = [...availableTechniques];
+            let result = [];
+
+            for(let i = 0; i < num; i++) {
+                let index = Math.floor(Math.random() * copy.length);
+                result.push(copy[index]);
+                copy.splice(index, 1);
+            }
+
+            return result;
+        }
+
+        function playTechnique(index) {
+            if(index >= selectedTechniques.length) {
+                return;
+            }
+
+            currentAudio = new Audio(selectedTechniques[index].audioSource);
+            currentAudio.play();
+
+            document.getElementById('description').innerHTML = selectedTechniques[index].description;
+            currentAudio.onended = function() {
+                playTechnique(index + 1);
+            }
+        }
+
+        function play() {
+            let min = parseInt(document.getElementById('min').value);
+            let max = parseInt(document.getElementById('max').value);
+            let speed = parseInt(document.getElementById('speed').value);
+
+            document.getElementById('progress').max = speed;
+
+            interval = setInterval(function() {
+                let value = document.getElementById('progress').value;
+                if(value >= speed) {
+                    document.getElementById('progress').value = 0;
+                    selectedTechniques = getRandomTechniques(min, max);
+                    playTechnique(0);
+                } else {
+                    document.getElementById('progress').value = value + 1;
+                }
+            }, 1000);
+        }
+
+        function stop() {
+            if(interval) {
+                clearInterval(interval);
+                interval = null;
+            }
+
+            if(currentAudio) {
+                currentAudio.pause();
+                currentAudio = null;
+            }
+
+            document.getElementById('progress').value = 0;
+            document.getElementById('description').innerHTML = '';
+        }
+    </script>
+</body>
+</html>
