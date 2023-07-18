@@ -10,8 +10,10 @@ The app is just HTML, JavaScript and some Audio files stored in a media subfolde
 
 Just copy the files somewhere (don't forget the media subfolder) and open the html file
 
-```git init 
-```git clone https://github.com/danielhsamuelsson/sandbox
+```
+git init 
+git clone https://github.com/danielhsamuelsson/sandbox
+```
 
 # Dependencies
 
