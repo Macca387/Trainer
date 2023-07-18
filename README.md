@@ -19,6 +19,8 @@ git clone https://github.com/FamilyGojuKarate/Trainer
 
 # Dependencies
 JavaScript is pretty plain but see the browsers mentioned above
+
 https://fonts.googleapis.com because I love roboto 
+
 Let's keep it that way kids ;-) 
 
