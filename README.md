@@ -8,7 +8,7 @@ The app is just HTML, JavaScript and some Audio files stored in a media subfolde
 
 # Installation
 
-Just copy the files somewhere (don't forget the media subfolder) and open the html file.
+Just copy the files somewhere (don't forget the audio subfolder) and open the html file.
 
 If you've a git person, use the below
 
