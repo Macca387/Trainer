@@ -9,10 +9,11 @@ The app is just HTML, JavaScript and some Audio files stored in a media subfolde
 # Installation
 
 Just copy the files somewhere (don't forget the media subfolder) and open the html file
+If you're a git person 
 
 ```
 git init 
-git clone https://github.com/danielhsamuelsson/sandbox
+git clone https://github.com/FamilyGojuKarate/Trainer
 ```
 
 # Dependencies
