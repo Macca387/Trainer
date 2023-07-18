@@ -8,8 +8,9 @@ The app is just HTML, JavaScript and some Audio files stored in a media subfolde
 
 # Installation
 
-Just copy the files somewhere (don't forget the media subfolder) and open the html file
-If you're a git person 
+Just copy the files somewhere (don't forget the media subfolder) and open the html file.
+
+If you've a git person, use the below
 
 ```
 git init 
@@ -17,4 +18,7 @@ git clone https://github.com/FamilyGojuKarate/Trainer
 ```
 
 # Dependencies
+JavaScript is pretty plain but see the browsers mentioned above
+https://fonts.googleapis.com because I love roboto 
+Let's keep it that way kids ;-) 
 
