@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Karate training guide</title>
+  </head>
+  <style>
+    body {
+      background-color: black;
+      color: lightgrey;
+    }
+    .hidden {
+      display: none;
+    }
+  </style>
+  <body>
+    <div id="content">
+      <button id="reset">Reset</button>
+      <div id="beltSelectDiv">
+        <label for="belt">Select you belt colour:</label>
+        <select name="belt" id="beltSelect" placeholder="Select option">
+          <option value="white">White</option>
+          <option value="whiteYellow">White with a yellow stripe</option>
+          <option value="yellowWhite">Yellow with a white stripe</option>
+          <option value="yellow">Yellow</option>
+          <option value="orangeWhite">Orange with a white stripe</option>
+          <option value="orange">Orange</option>
+          <option value="redWhite">Red with a white stripe</option>
+          <option value="red">Red</option>
+          <option value="greenWhite">Green with a white stripe</option>
+          <option value="green">Green</option>
+          <option value="purpleWhite">Purple with a white stripe</option>
+          <option value="purple">Purple</option>
+          <option value="blueWhite">Blue with a white stripe</option>
+          <option value="blue">Blue</option>
+          <option value="brownWhite">Brown with a white stripe</option>
+          <option value="brown">Brown</option>
+          <option value="blackWhite">Black with a white stripe</option>
+          <option value="black">Black</option>
+        </select>
+        <input type="submit" id="begin" value="Begin" />
+      </div>
+      <div id="activities" class="hidden">
+        <button id="kihon">Practice your Kihon</button>
+        <button id="kata">Practice you Kata</button>
+      </div>
+      <div id="kihonPrac" class="hidden">
+        Upper block<br />Middle block<br />Lower block<br />Upper punch<br />Middle
+        punch<br />Lower punch<br />Palm strike<br />Front elbow<br />Side
+        elbow<br />Rear elbow <br />Flicking kick <br />knee raising kick
+        <br />Pushing kick <br />
+        <div id="whiteKihonPrac" class="hidden"></div>
+        <div id="whiteYellowKihonPrac" class="hidden"></div>
+        <div id="yellowWhiteKihonPrac" class="hidden"></div>
+        <div id="yellowKihonPrac" class="hidden"></div>
+        <div id="orangeWhiteKihonPrac" class="hidden"></div>
+        <div id="orangeKihonPrac" class="hidden"></div>
+        <div id="redWhiteKihonPrac" class="hidden"></div>
+        <div id="redKihonPrac" class="hidden"></div>
+        <div id="greenWhiteKihonPrac" class="hidden"></div>
+        <div id="greenKihonPrac" class="hidden"></div>
+        <div id="purpleWhiteKihonPrac" class="hidden"></div>
+        <div id="purpleKihonPrac" class="hidden"></div>
+        <div id="blueWhiteKihonPrac" class="hidden"></div>
+        <div id="blueKihonPrac" class="hidden"></div>
+        <div id="brownWhiteKihonPrac" class="hidden"></div>
+        <div id="brownKihonPrac" class="hidden"></div>
+        <div id="blackWhiteKihonPrac" class="hidden"></div>
+        <div id="blackKihonPrac" class="hidden"></div>
+      </div>
+      <div id="kataprac">
+        <div id="whiteKataPrac" class="hidden">
+          Your kata is four way pattern. <br />
+          <div id="whiteKataConficence">
+            <label for="level">How confident are you at this kata</label>
+            <select name="level" id="level">
+              <option value="justStarted">
+                I have only just started this kata
+              </option>
+              <option value="gettingBetter">
+                I am getting better at this kata
+              </option>
+              <option value="justStarted">I am confident at this kata</option>
+            </select>
+            <button id="kataStart">Start kata</button>
+          </div>
+        </div>
+        <div id="whiteYellowKataPrac" class="hidden">
+          Your kata is four way pattern block punch <br />
+          <div id="whiteYellowKataConficence">
+            <label for="level">How confident are you at this kata</label>
+            <select name="level" id="level">
+              <option value="justStarted">
+                I have only just started this kata
+              </option>
+              <option value="gettingBetter">
+                I am getting better at this kata
+              </option>
+              <option value="justStarted">I am confident at this kata</option>
+            </select>
+            <button id="kataStart">Start kata</button>
+          </div>
+        </div>
+        <div id="yellowWhiteKataPrac" class="hidden">
+          Your kata is four way pattern block step punch <br />
+          <div id="yellowWhiteKataConficence">
+            <label for="level">How confident are you at this kata</label>
+            <select name="level" id="level">
+              <option value="justStarted">
+                I have only just started this kata
+              </option>
+              <option value="gettingBetter">
+                I am getting better at this kata
+              </option>
+              <option value="justStarted">I am confident at this kata</option>
+            </select>
+            <button id="kataStart">Start kata</button>
+          </div>
+        </div>
+        <div id="yellowKataPrac" class="hidden">
+          Your kata is Taikyoku Jodan (Upper punch upper block) <br />
+          <div id="yellowKataConficence">
+            <label for="level">How confident are you at this kata</label>
+            <select name="level" id="level">
+              <option value="justStarted">
+                I have only just started this kata
+              </option>
+              <option value="gettingBetter">
+                I am getting better at this kata
+              </option>
+              <option value="justStarted">I am confident at this kata</option>
+            </select>
+            <button id="kataStart">Start kata</button>
+          </div>
+        </div>
+        <div id="orangeWhiteKataPrac" class="hidden">
+          Your kata is Taikyoku Chudan (Middle punch middle block) <br />
+          <div id="orangeWhiteKataConficence">
+            <label for="level">How confident are you at this kata</label>
+            <select name="level" id="level">
+              <option value="justStarted">
+                I have only just started this kata
+              </option>
+              <option value="gettingBetter">
+                I am getting better at this kata
+              </option>
+              <option value="justStarted">I am confident at this kata</option>
+            </select>
+            <button id="kataStart">Start kata</button>
+          </div>
+        </div>
+        <div id="orangeKataPrac" class="hidden">
+          Your kata is Taikyoku Gedan (Lower punch lower block) <br />
+          <div id="orangeKataConficence">
+            <label for="level">How confident are you at this kata</label>
+            <select name="level" id="level">
+              <option value="justStarted">
+                I have only just started this kata
+              </option>
+              <option value="gettingBetter">
+                I am getting better at this kata
+              </option>
+              <option value="justStarted">I am confident at this kata</option>
+            </select>
+            <button id="kataStart">Start kata</button>
+          </div>
+        </div>
+        <div id="redWhiteKataPrac" class="hidden">
+          Your kata is Taikyoku Kake (Kake elbow front kick) <br />
+          <div id="redWhiteKataConficence">
+            <label for="level">How confident are you at this kata</label>
+            <select name="level" id="level">
+              <option value="justStarted">
+                I have only just started this kata
+              </option>
+              <option value="gettingBetter">
+                I am getting better at this kata
+              </option>
+              <option value="justStarted">I am confident at this kata</option>
+            </select>
+            <button id="kataStart">Start kata</button>
+          </div>
+        </div>
+        <div id="redKataPrac" class="hidden">
+          Your kata is Taikyoku Mawashi (Mawashi elbow back-fist lower block
+          punch) <br />
+          <div id="redKataConficence">
+            <label for="level">How confident are you at this kata</label>
+            <select name="level" id="level">
+              <option value="justStarted">
+                I have only just started this kata
+              </option>
+              <option value="gettingBetter">
+                I am getting better at this kata
+              </option>
+              <option value="justStarted">I am confident at this kata</option>
+            </select>
+            <button id="kataStart">Start kata</button>
+          </div>
+        </div>
+        <div id="greenWhiteKataPrac" class="hidden">
+          Your kata is Tensho <br />
+          <div id="greenWhiteKataConficence">
+            <label for="level">How confident are you at this kata</label>
+            <select name="level" id="level">
+              <option value="justStarted">
+                I have only just started this kata
+              </option>
+              <option value="gettingBetter">
+                I am getting better at this kata
+              </option>
+              <option value="justStarted">I am confident at this kata</option>
+            </select>
+            <button id="kataStart">Start kata</button>
+          </div>
+        </div>
+        <div id="greenKataPrac" class="hidden">
+          Your kata is Gekisai Ich <br />
+          <div id="greenKataConficence">
+            <label for="level">How confident are you at this kata</label>
+            <select name="level" id="level">
+              <option value="justStarted">
+                I have only just started this kata
+              </option>
+              <option value="gettingBetter">
+                I am getting better at this kata
+              </option>
+              <option value="justStarted">I am confident at this kata</option>
+            </select>
+            <button id="kataStart">Start kata</button>
+          </div>
+        </div>
+        <div id="purpleWhiteKataPrac" class="hidden">
+          Your kata is Gekisai Ni <br />
+          <div id="purpleWhiteKataConficence">
+            <label for="level">How confident are you at this kata</label>
+            <select name="level" id="level">
+              <option value="justStarted">
+                I have only just started this kata
+              </option>
+              <option value="gettingBetter">
+                I am getting better at this kata
+              </option>
+              <option value="justStarted">I am confident at this kata</option>
+            </select>
+            <button id="kataStart">Start kata</button>
+          </div>
+        </div>
+        <div id="purpleKataPrac" class="hidden">
+          Your kata is Choku <br />
+          <div id="purpleKataConficence">
+            <label for="level">How confident are you at this kata</label>
+            <select name="level" id="level">
+              <option value="justStarted">
+                I have only just started this kata
+              </option>
+              <option value="gettingBetter">
+                I am getting better at this kata
+              </option>
+              <option value="justStarted">I am confident at this kata</option>
+            </select>
+            <button id="kataStart">Start kata</button>
+          </div>
+        </div>
+        <div id="blueWhiteKataPrac" class="hidden">
+          Your kata is Naihanchi / Tekki Shodan <br />
+          <div id="blueWhiteKataConficence">
+            <label for="level">How confident are you at this kata</label>
+            <select name="level" id="level">
+              <option value="justStarted">
+                I have only just started this kata
+              </option>
+              <option value="gettingBetter">
+                I am getting better at this kata
+              </option>
+              <option value="justStarted">I am confident at this kata</option>
+            </select>
+            <button id="kataStart">Start kata</button>
+          </div>
+        </div>
+        <div id="blueKataPrac" class="hidden">
+          Your kata is Saifa <br />
+          <div id="blackWhiteKataConficence">
+            <label for="level">How confident are you at this kata</label>
+            <select name="level" id="level">
+              <option value="justStarted">
+                I have only just started this kata
+              </option>
+              <option value="gettingBetter">
+                I am getting better at this kata
+              </option>
+              <option value="justStarted">I am confident at this kata</option>
+            </select>
+            <button id="kataStart">Start kata</button>
+          </div>
+        </div>
+        <div id="brownWhiteKataPrac" class="hidden">
+          Your kata is Sanchin <br />
+          <div id="brownWhiteKataConficence">
+            <label for="level">How confident are you at this kata</label>
+            <select name="level" id="level">
+              <option value="justStarted">
+                I have only just started this kata
+              </option>
+              <option value="gettingBetter">
+                I am getting better at this kata
+              </option>
+              <option value="justStarted">I am confident at this kata</option>
+            </select>
+            <button id="kataStart">Start kata</button>
+          </div>
+        </div>
+        <div id="brownKataPrac" class="hidden">
+          Your kata is Sanchin <br />
+          <div id="blackWhiteKataConficence">
+            <label for="level">How confident are you at this kata</label>
+            <select name="level" id="level">
+              <option value="justStarted">
+                I have only just started this kata
+              </option>
+              <option value="gettingBetter">
+                I am getting better at this kata
+              </option>
+              <option value="justStarted">I am confident at this kata</option>
+            </select>
+            <button id="kataStart">Start kata</button>
+          </div>
+        </div>
+        <div id="blackWhiteKataPrac" class="hidden">
+          Your kata is Sanchin <br />
+          <div id="blackWhiteKataConficence">
+            <label for="level">How confident are you at this kata</label>
+            <select name="level" id="level">
+              <option value="justStarted">
+                I have only just started this kata
+              </option>
+              <option value="gettingBetter">
+                I am getting better at this kata
+              </option>
+              <option value="justStarted">I am confident at this kata</option>
+            </select>
+            <button id="kataStart">Start kata</button>
+          </div>
+        </div>
+        <div id="blackKataPrac" class="hidden">
+          Which kata have you chosen? <br />
+          <div id="blackKataConficence">
+            <label for="level">How confident are you at this kata</label>
+            <select name="level" id="level">
+              <option value="justStarted">
+                I have only just started this kata
+              </option>
+              <option value="gettingBetter">
+                I am getting better at this kata
+              </option>
+              <option value="justStarted">I am confident at this kata</option>
+            </select>
+            <button id="kataStart">Start kata</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+  <script>
+    function showActivities() {
+      document.getElementById("activities").style.display = "block";
+      document.getElementById("kihon").addEventListener("click", showKihon);
+      document.getElementById("kata").addEventListener("click", showKata);
+      document.getElementById("beltSelectDiv").style.display = "none";
+    }
+    function showKihon() {
+      document.getElementById("kihonPrac").style.display = "block";
+      document.getElementById("beltSelectDiv").style.display = "none";
+    }
+    function showKata() {
+      let grade = document.getElementById("beltSelect").value;
+      let e = grade + "KataPrac";
+      document.getElementById(e).style.display = "block";
+      document.getElementById("beltSelectDiv").style.display = "none";
+    }
+    function startKata() {
+      let grade = document.getElementById("beltSelect").value;
+      let confidence = document.getElementById("level").value;
+      let e = grade + "KataPrac" + confidence;
+      document.getElementById(e).style.display = "block";
+      document.getElementById("beltSelectDiv").style.display = "none";
+    }
+    function reset() {
+      location.reload();
+    }
+    document.getElementById("kataStart").addEventListener("click", startKata);
+    document.getElementById("begin").addEventListener("click", showActivities);
+    document.getElementById("reset").addEventListener("click", reset);
+  </script>
+</html>
